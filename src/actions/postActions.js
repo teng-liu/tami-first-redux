@@ -1,4 +1,4 @@
-import {FETCH_POSTS, NEW_POST} from './types';
+import {FETCH_POSTS, NEW_POST, FETCH_DEFINES} from './types';
 
 
 export const fetchPosts = () => dispatch => {
@@ -11,6 +11,19 @@ export const fetchPosts = () => dispatch => {
     })
     );   
 };
+
+export const fetchDefinitions = () => dispatch => {
+    console.log('fetching definitions');
+    fetch('http://localhost:8888/definitions')
+    .then(res => res.json())
+    .then(defines => dispatch({
+        type: FETCH_DEFINES,
+        payload: defines
+    })
+    );
+
+    
+}
 
 export const createPost = postData => dispatch => {
     console.log('create action called');

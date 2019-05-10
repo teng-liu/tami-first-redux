@@ -7,6 +7,7 @@ import Postform from './components/Postform';
 import { Provider } from 'react-redux';
 // import {createStore, applyMiddleware} from 'redux';
 import store from './store';
+import Definitions from './components/Definitions';
 
 // referenced from: https://www.youtube.com/watch?v=93p3LxR9xfM
 
@@ -20,6 +21,8 @@ class App extends Component {
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
           </header>
+          <Definitions />
+          <hr />
           <Postform />
           <hr />
           <Posts />

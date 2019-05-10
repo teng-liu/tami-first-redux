@@ -1,8 +1,9 @@
-import {FETCH_POSTS, NEW_POST} from '../actions/types';
+import {FETCH_POSTS, NEW_POST, FETCH_DEFINES} from '../actions/types';
 
 const initialState = {
     items: [],
-    item: {}
+    item: {},
+    defines: []
 }
 
 export default function(state = initialState, action) {
@@ -16,6 +17,11 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 item: action.payload 
+            }
+        case FETCH_DEFINES:
+            return{
+                ...state,
+                defines: action.payload 
             }
             
         default: 

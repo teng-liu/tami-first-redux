@@ -6,7 +6,10 @@ import {fetchPosts} from '../actions/postActions';
 class Posts extends Component {
 
   componentWillMount(){
+    
     this.props.fetchPosts();
+    console.log(this.props);
+    
   }
 
   componentWillReceiveProps(nextProps) {
@@ -22,7 +25,7 @@ class Posts extends Component {
         <p>{post.body}</p>
       </div>
     ));
-    
+
     return (
       <div>
         <h1>post-example</h1>
