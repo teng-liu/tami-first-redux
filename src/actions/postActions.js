@@ -12,7 +12,9 @@ export const fetchPosts = () => dispatch => {
     );   
 };
 
-export const fetchDefinitions = () => dispatch => {
+export const fetchDefinitions = () => 
+
+(dispatch) => {
     console.log('fetching definitions');
     fetch('http://localhost:8888/definitions')
     .then(res => res.json())

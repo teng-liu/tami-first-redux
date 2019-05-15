@@ -6,13 +6,20 @@ const initialState = {
     defines: []
 }
 
+// state = initialState   =>   state, or initialState if state is null
 export default function(state = initialState, action) {
     switch(action.type){
         case FETCH_POSTS:
+            // shallow copy - 1
             return {
                 ...state,
                 items: action.payload 
             }
+            // shallow copy - 2
+            // return Object.assign({}, old, {
+            //     selected: action.parameters.id
+            // })
+
         case NEW_POST:
             return {
                 ...state,
